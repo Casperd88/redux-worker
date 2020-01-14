@@ -32,7 +32,7 @@ async function init() {
   const Counter = connect(
     mapState,
     mapDispatch
-  )(({ count, increment, decrement, ping, hello }) => (
+  )(({ count, increment, decrement, ping }) => (
     <>
       Count: {count}
       <button onClick={decrement}>-</button>
