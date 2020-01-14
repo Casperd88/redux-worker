@@ -1,11 +1,10 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const WorkerPlugin = require("worker-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: {
-    app: "./src/index.jsx"
-  },
+  entry: "./src/index.jsx",
   module: {
     rules: [
       {
@@ -20,12 +19,14 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
-      title: "Redux Thread",
+      title: "Redux Worker",
       template: path.resolve(__dirname, "public/index.html")
-    })
+    }),
+    new WorkerPlugin()
   ],
   output: {
-    filename: "[name].[hash:8].js",
-    path: path.resolve(__dirname, "dist")
+    filename: "[name].js",
+    path: path.resolve(__dirname, "dist"),
+    globalObject: "self"
   }
 };
