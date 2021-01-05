@@ -9,7 +9,7 @@
     "dev": "webpack-dev-server"
   },
   "dependencies": {
-    "axios": "^0.19.1",
+    "axios": "^0.21.1",
     "comlink": "^4.2.0",
     "core-js": "^3.6.2",
     "global": "^4.4.0",
